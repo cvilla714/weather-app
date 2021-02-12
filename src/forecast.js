@@ -15,3 +15,5 @@ const getCity = async (city) => {
   const dataCity = await responseCity.json();
   return dataCity[0];
 };
+
+export { getWeather, getCity };
