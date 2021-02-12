@@ -1,3 +1,4 @@
+import { getWeather, getCity } from "./forecast";
 const cityForm = document.querySelector("form");
 const card = document.querySelector(".card");
 const details = document.querySelector(".details");
@@ -10,7 +11,7 @@ const updateUI = (data) => {
 
   details.innerHTML = `
       <h5 class="my-3">${cityDetails.EnglishName}</h5>
-      <h3 class="my-3">Time Zone ${cityDetails.TimeZone.Code}</h3>
+      <h3 class="my-3">${cityDetails.TimeZone.Code}</h3>
       <div class="my-3">${weatherDetails.WeatherText}</div>
       <div class="display-4 my-4">
           <span>${weatherDetails.Temperature.Metric.Value}</span>
