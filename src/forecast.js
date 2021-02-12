@@ -7,3 +7,11 @@ const getWeather = async (locationid) => {
   const dataWeather = await responseWeather.json();
   return dataWeather[0];
 };
+
+const getCity = async (city) => {
+  const baseCity = "https://dataservice.accuweather.com/locations/v1/cities/search";
+  const queryCity = `?apikey=${key}&q=${city}`;
+  const responseCity = await fetch(baseCity + queryCity);
+  const dataCity = await responseCity.json();
+  return dataCity[0];
+};
