@@ -13,3 +13,8 @@ body {
   width: 100px;
   margin-bottom: -50px;
 }
+
+.info {
+  font-size: 1rem;
+  color: crimson;
+}
