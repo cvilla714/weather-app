@@ -10,11 +10,11 @@ const updateUI = (data) => {
   const { cityDetails, weatherDetails } = data;
 
   details.innerHTML = `
-      <h5 class="my-3">${cityDetails.EnglishName}</h5>
-      <h3 class="my-3">${cityDetails.TimeZone.Code}</h3>
-      <div class="my-3">${weatherDetails.WeatherText}</div>
-      <div class="display-4 my-4">
-          <span>${weatherDetails.Temperature.Metric.Value}</span>
+      <h5 class="my-3">City Name:${cityDetails.EnglishName}</h5>
+      <h3 class="my-3">Time Zone: ${cityDetails.TimeZone.Code}</h3>
+      <div class="my-3">Forecast: ${weatherDetails.WeatherText}</div>
+      <div class="my-4 info">
+          <span>Temperature: ${weatherDetails.Temperature.Metric.Value}</span>
           <span>&deg;F</span>
           /
           <span>${weatherDetails.Temperature.Imperial.Value}</span>
