@@ -30,3 +30,12 @@ const updateUI = (data) => {
     card.classList.remove("d-none");
   }
 };
+
+const updateCity = async (city) => {
+  const cityDetails = await getCity(city);
+  const weatherDetails = await getWeather(cityDetails.Key);
+  return {
+    cityDetails: cityDetails,
+    weatherDetails: weatherDetails,
+  };
+};
