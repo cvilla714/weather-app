@@ -1,3 +1,3 @@
-import "./style.css";
-import "./app";
-import "./forecast";
+import './style.css';
+import './app';
+import './forecast';
