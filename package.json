@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/cvilla714/weather-app#readme",
   "devDependencies": {
+    "css-loader": "^5.0.2",
+    "style-loader": "^2.0.0",
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
