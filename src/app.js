@@ -39,3 +39,13 @@ const updateCity = async (city) => {
     weatherDetails: weatherDetails,
   };
 };
+
+cityForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const city = cityForm.city.value.trim();
+  cityForm.reset();
+  updateCity(city)
+    .then((data) => updateUI(data))
+    .catch((err) => console.log(err));
+  localStorage.setItem("ultimaciudad", city);
+});
