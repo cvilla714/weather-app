@@ -49,3 +49,13 @@ cityForm.addEventListener("submit", (event) => {
     .catch((err) => console.log(err));
   localStorage.setItem("ultimaciudad", city);
 });
+
+if (localStorage.getItem("ultimaciudad")) {
+  updateCity(localStorage.getItem("ultimaciudad"))
+    .then((data) => updateUI(data))
+    .catch((err) => console.log(err));
+}
+const valor = true ? "value 1" : "value 2 ";
+console.log(valor);
+const valor1 = false ? "value 1" : "value 2 ";
+console.log(valor1);
