@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://rawcdn.githack.com/cvilla714/weather-app/64e32f327dbe3bf1df64ed86f942d3c34af980fe/dist/index.html)
 
 ## Getting Started
 
