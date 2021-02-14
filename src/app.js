@@ -8,17 +8,20 @@ const icon = document.querySelector(".icon img");
 const unitToggle = document.querySelector("[data-unit-toggle]");
 const metricRadio = document.getElementById("cel");
 const imperialRadio = document.getElementById("fah");
+const tcel = document.querySelector("[data-celcius-temp]");
 
 const updateUI = (data) => {
   console.log(data);
   const { cityDetails, weatherDetails } = data;
+  var maintem = weatherDetails.Temperature.Imperial.Value;
+  // console.log(maintem);
 
   details.innerHTML = `
       <h5 class="my-3">City Name: ${cityDetails.EnglishName}</h5>
       <h2 class="my-3 zone">Time Zone: ${cityDetails.TimeZone.Code}</h2>
       <div class="my-3 text-info">Forecast: ${weatherDetails.WeatherText}</div>
       <div class="my-4 info">
-          <span>${weatherDetails.Temperature.Imperial.Value}</span>
+      <span data-celcius-temp></span>
           &deg;<span data-temp-unit></span>
       </div>
       `;
@@ -31,6 +34,25 @@ const updateUI = (data) => {
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
   }
+
+  unitToggle.addEventListener("click", (e) => {
+    convertTemp();
+  });
+
+  function convertTemp() {
+    let s = document.querySelector("[data-temp-unit]");
+    let c = document.querySelector("[data-celcius-temp]");
+    console.log(s.innerHTML);
+    // let returnTemp = maintem;
+
+    let returnTemp = Math.round((maintem - 32) * (5 / 9));
+    console.log(returnTemp);
+
+    c.innerHTML = s.innerHTML == "F" ? maintem : returnTemp;
+    console.log(maintem);
+    return returnTemp;
+  }
+  convertTemp();
 };
 
 unitToggle.addEventListener("click", (e) => {
@@ -39,13 +61,14 @@ unitToggle.addEventListener("click", (e) => {
   // let metricUnits = !metricRadio.checked;
   metricRadio.checked = metricUnits;
   imperialRadio.checked = !metricUnits;
+
   updateUnits();
 });
 
 function updateUnits() {
   const tempUnits = document.querySelector("[data-temp-unit]");
   console.log(tempUnits);
-  tempUnits.innerText = isMetric() ? "C" : "F";
+  tempUnits.innerHTML = isMetric() ? "C" : "F";
 }
 
 function isMetric() {
@@ -59,8 +82,6 @@ metricRadio.addEventListener("change", () => {
 imperialRadio.addEventListener("change", () => {
   updateUnits();
 });
-
-function displayTemperature(temperature) {}
 
 const updateCity = async (city) => {
   const cityDetails = await getCity(city);
