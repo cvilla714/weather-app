@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import { getWeather, getCity } from "./forecast";
 
 const cityForm = document.querySelector("form");
@@ -8,18 +9,17 @@ const icon = document.querySelector(".icon img");
 const unitToggle = document.querySelector("[data-unit-toggle]");
 const metricRadio = document.getElementById("cel");
 const imperialRadio = document.getElementById("fah");
-const tcel = document.querySelector("[data-celcius-temp]");
 
 const updateUI = (data) => {
-  console.log(data);
+  // console.log(data);
   const { cityDetails, weatherDetails } = data;
-  var maintem = weatherDetails.Temperature.Imperial.Value;
-  // console.log(maintem);
-
+  const maintem = weatherDetails.Temperature.Imperial.Value;
+  const thetime = new Date(weatherDetails.EpochTime).toLocaleTimeString("en-US");
   details.innerHTML = `
       <h5 class="my-3">City Name: ${cityDetails.EnglishName}</h5>
       <h2 class="my-3 zone">Time Zone: ${cityDetails.TimeZone.Code}</h2>
       <div class="my-3 text-info">Forecast: ${weatherDetails.WeatherText}</div>
+      <div class="my-3 text-info">Time : ${thetime}</div>
       <div class="my-4 info">
       <span data-celcius-temp></span>
           &deg;<span data-temp-unit></span>
@@ -35,45 +35,44 @@ const updateUI = (data) => {
     card.classList.remove("d-none");
   }
 
-  unitToggle.addEventListener("click", (e) => {
-    convertTemp();
-  });
-
   function convertTemp() {
-    let s = document.querySelector("[data-temp-unit]");
-    let c = document.querySelector("[data-celcius-temp]");
-    console.log(s.innerHTML);
+    const s = document.querySelector("[data-temp-unit]");
+    const c = document.querySelector("[data-celcius-temp]");
+    // console.log(s.innerHTML);
     // let returnTemp = maintem;
 
-    let returnTemp = Math.round((maintem - 32) * (5 / 9));
-    console.log(returnTemp);
+    const returnTemp = Math.round((maintem - 32) * (5 / 9));
+    // console.log(returnTemp);
 
     c.innerHTML = s.innerHTML == "F" ? maintem : returnTemp;
-    console.log(maintem);
+    // console.log(maintem);
     return returnTemp;
   }
   convertTemp();
+
+  unitToggle.addEventListener("click", () => {
+    convertTemp();
+  });
 };
 
-unitToggle.addEventListener("click", (e) => {
-  console.log(e);
-  let metricUnits = !isMetric();
+function isMetric() {
+  return metricRadio.checked;
+}
+
+function updateUnits() {
+  const tempUnits = document.querySelector("[data-temp-unit]");
+  // console.log(tempUnits);
+  tempUnits.innerHTML = isMetric() ? "C" : "F";
+}
+unitToggle.addEventListener("click", () => {
+  // console.log(e);
+  const metricUnits = !isMetric();
   // let metricUnits = !metricRadio.checked;
   metricRadio.checked = metricUnits;
   imperialRadio.checked = !metricUnits;
 
   updateUnits();
 });
-
-function updateUnits() {
-  const tempUnits = document.querySelector("[data-temp-unit]");
-  console.log(tempUnits);
-  tempUnits.innerHTML = isMetric() ? "C" : "F";
-}
-
-function isMetric() {
-  return metricRadio.checked;
-}
 
 metricRadio.addEventListener("change", () => {
   updateUnits();
