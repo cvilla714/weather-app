@@ -2,71 +2,62 @@
 
 # Project: Weather App
 
-> One paragraph statement about the project.
+> Subtmit a city name and get back information on weather/timezone/ forecast and temperature.
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
-
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML / CSS
+- Bootstrap
+- Webpack
+- Javascript
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://rawcdn.githack.com/cvilla714/weather-app/e69d6a5a8edc54b6dcffc98761f872ad1898e26f/dist/index.html)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-To get a local copy up and running follow these simple example steps.
+**To get a copy of the code please click on the green button on the top right corner that says Code**
 
 ### Prerequisites
 
-### Setup
+- Node installed on your computer
+- Npm as well
 
 ### Install
 
+**Now to clone it to your local machine please open your terminal and paste this code `git clone git@github.com:cvilla714/weather-app.git`**
+
+**Then you can go into the directory by typig `cd weather-app`**
+
+**Next you need to access the brach by typing `git checkout weather`**
+
+**Finally just type this command `npm install` this will install all of the depnedecies for the project**
+
 ### Usage
 
-### Run tests
-
-### Deployment
+**Once you have gone through the process of installing the code you now run this command `npm run start` this will start the app and a new window will open in your browser with the app ready to be use**
 
 ## Authors
 
-👤 **Author1**
+👤 **Cosmel Villalobos**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+- Github: [@cvilla714](https://github.com/cvilla714)
+- Twitter: [@kckeyti](https://twitter.com/kckeyti)
+- LinkedIn: [Cosmel Villalobos](https://www.linkedin.com/in/cosvilla/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/cvilla714/weather-app/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://github.com/cvilla714/weather-app/blob/development/LICENSE) licensed.
