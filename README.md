@@ -2,7 +2,12 @@
 
 # Project: Weather App
 
-> Subtmit a city name and get back information on weather/timezone/ forecast and temperature.
+> The idea of the project was to build a weather app using an API, the
+> user will submit the city name in the input form and will get back
+> information such as the English city name, forecast, temperature.
+> The temperature is provided in Celcius and with a toggle button 
+> can switch to Farenheight. 
+> Also the main card will change between day and night depending on the > information from the API.
 
 ![screenshot](./app_screenshot.png)
 
