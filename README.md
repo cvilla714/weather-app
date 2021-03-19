@@ -7,7 +7,7 @@
 > information such as the English city name, forecast, temperature.
 > The temperature is provided in Celcius and with a toggle button 
 > can switch to Farenheight. 
-> Also the main card will change between day and night depending on the > information from the API.
+> Also the main card will change between day and night depending on the information from the API.
 
 ![screenshot](./app_screenshot.png)
 
